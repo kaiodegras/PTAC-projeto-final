@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./style.css";
+import "./home.css";
 
 export default function ToDo() {
     const listaLocalStorage = localStorage.getItem("Lista");
-    const [canal, setCanl] = useState("");
+    const [atividade, setAtividade] = useState("");
     const [lista, setLista] = useState(JSON.parse(listaLocalStorage)|| []);
     const [id, setId] = useState(1);
-    const [Url, setUrl] = useState("");
-    const [video, setVideo] = useState("");
+    const [Canal, setCanal] = useState("");
+    const [Video, setVideo] = useState("");
+    const [descricao, setDescricao] = useState("");
+    const [url, setUrl] = useState("");
 
     useEffect(() => {
         localStorage.setItem("Lista", JSON.stringify(lista));
@@ -19,16 +21,22 @@ export default function ToDo() {
         setLista([...lista, {
             atividade: atividade,
             id: id,
-            Faixa: Faixa,
-            Categoria: Categoria
+            url: url,
+            descricao: descricao,
+            Canal:Canal,
+            Video:Video
         }]);
         setId(id + 1);
         setAtividade("");
-        setFaixa("");
-        setCategoria("");
+        setCanal("");
+        setLista("");
+        setDescricao("");
+        setUrl("")
+        setVideo("")
+        
     };
 
-  
+
 
     return (
         <div className="container">
@@ -39,8 +47,12 @@ export default function ToDo() {
             </Link>
             <form className="input" onSubmit={salvar}>
                 <input type="text" value={atividade} onChange={(e) => setAtividade(e.target.value)} />
-                <input type="text" value={Faixa} onChange={(e) => setFaixa(e.target.value)} />
-                <input type="text" value={Categoria} onChange={(e) => setCategoria(e.target.value)} />
+                <input type="text" value={lista} onChange={(e) => setFaixa(e.target.value)} />
+                <input type="text" value={id} onChange={(e) => setCategoria(e.target.value)} />
+                <input type="text" value={Canal} onChange={(e) => setCategoria(e.target.value)} />
+                <input type="text" value={Video} onChange={(e) => setCategoria(e.target.value)} />
+                <input type="text" value={descricao} onChange={(e) => setCategoria(e.target.value)} />
+                <input type="text" value={url} onChange={(e) => setCategoria(e.target.value)} />
                 <button>ADICIONAR</button>
             </form>
             {lista.map((ativ) =>
