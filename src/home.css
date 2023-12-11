@@ -1,3 +1,9 @@
 h1{
     text-align: center;
 }
+
+body {
+    background-color: gray;
+    /* Adapte as cores conforme necessário */
+  }
+  

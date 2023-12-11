@@ -36,7 +36,7 @@ export default function ToDo() {
     return (
         <div className="container">
 
-            <h1>Lutador de Jiu - Jiutsu</h1>
+            <h1>JIU FLIX</h1>
             <Link to="/">
                 <button>Voltar Home</button>
             </Link>
