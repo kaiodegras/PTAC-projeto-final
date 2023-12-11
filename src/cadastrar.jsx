@@ -58,7 +58,7 @@ export default function ToDo() {
                     width="772" 
                     height="434" 
                     src={`https://www.youtube.com/embed/${canal.url.slice(17)}`}
-                    title="JIU JITSU - A ORIGEM" 
+                    title="JIU JITSU A ORIGEM" 
                     frameborder={0} 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowFullScreen></iframe>
