@@ -28,11 +28,6 @@ export default function ToDo() {
         }]);
         setId(id + 1);
         setAtividade("");
-        setCanal("");
-        setLista("");
-        setDescricao("");
-        setUrl("")
-        setVideo("")
         
     };
 
@@ -40,34 +35,35 @@ export default function ToDo() {
 
     return (
         <div className="container">
-            <img src="ibjjf.png" alt="IBJJF"></img>
+
             <h1>Lutador de Jiu - Jiutsu</h1>
             <Link to="/">
                 <button>Voltar Home</button>
             </Link>
             <form className="input" onSubmit={salvar}>
-                <input type="text" value={atividade} onChange={(e) => setAtividade(e.target.value)} />
-                <input type="text" value={lista} onChange={(e) => setFaixa(e.target.value)} />
-                <input type="text" value={id} onChange={(e) => setCategoria(e.target.value)} />
-                <input type="text" value={Canal} onChange={(e) => setCategoria(e.target.value)} />
-                <input type="text" value={Video} onChange={(e) => setCategoria(e.target.value)} />
-                <input type="text" value={descricao} onChange={(e) => setCategoria(e.target.value)} />
-                <input type="text" value={url} onChange={(e) => setCategoria(e.target.value)} />
-                <button>ADICIONAR</button>
+               <h4>Canal:</h4> <input type="text" value={Canal} onChange={(e) => setCanal(e.target.value)} />
+               <h4>Nome:</h4><input type="text" value={Video} onChange={(e) => setVideo(e.target.value)} />
+               <h4>Descrição:</h4><input type="text" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
+               <h4>URL:</h4><input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
+              <button>ADICIONAR</button>
             </form>
-            {lista.map((ativ) =>
-                <ul key={ativ.id}>
-                     <Link to={`/detalhe/${ativ.id}`}>
-                     </Link>
-                     <li>{ativ.atividade}</li>
-                     
-                    <li>
-                        <p>{ativ.atividade}</p>
-                        <p>{ativ.Faixa}</p>
-                        <p>{ativ.Categoria}</p>
-                        <button onClick={() => remover(ativ.id)}>Remover</button>
-                    </li>
-                </ul>
+            
+            {lista.map((canal) =>
+                <div key={canal.id}>
+                    <h1>Nome:{canal.video}</h1>
+                    <h1>Canal:{canal.canal}</h1>
+                    <h1>Descrição:{canal.descricao}</h1>
+
+                    <iframe 
+                    width="772" 
+                    height="434" 
+                    src={`https://www.youtube.com/embed/${canal.url.slice(17)}`}
+                    title="JIU JITSU - A ORIGEM" 
+                    frameborder={0} 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowFullScreen></iframe>
+            
+                </div>
             )}
         </div>
     );
