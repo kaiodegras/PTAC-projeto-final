@@ -11,6 +11,7 @@ export default function ToDo() {
     const [Video, setVideo] = useState("");
     const [descricao, setDescricao] = useState("");
     const [url, setUrl] = useState("");
+    const [nome, setNome] = useState("");
 
     useEffect(() => {
         localStorage.setItem("Lista", JSON.stringify(lista));
@@ -24,14 +25,13 @@ export default function ToDo() {
             url: url,
             descricao: descricao,
             Canal:Canal,
-            Video:Video
+            Video:Video,
+            nome:nome
         }]);
         setId(id + 1);
         setAtividade("");
         
     };
-
-
 
     return (
         <div className="container">
@@ -42,7 +42,7 @@ export default function ToDo() {
             </Link>
             <form className="input" onSubmit={salvar}>
                <h4>Canal:</h4> <input type="text" value={Canal} onChange={(e) => setCanal(e.target.value)} />
-               <h4>Nome:</h4><input type="text" value={Video} onChange={(e) => setVideo(e.target.value)} />
+               <h4>Nome:</h4><input type="text" value={nome} onChange={(e) => setNome(e.target.value)} />
                <h4>Descrição:</h4><input type="text" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
                <h4>URL:</h4><input type="text" value={url} onChange={(e) => setUrl(e.target.value)} />
               <button>ADICIONAR</button>
@@ -50,8 +50,8 @@ export default function ToDo() {
             
             {lista.map((canal) =>
                 <div key={canal.id}>
-                    <h1>Nome:{canal.video}</h1>
-                    <h1>Canal:{canal.canal}</h1>
+                    <h1>Nome:{canal.nome}</h1>
+                    <h1>Canal:{canal.Canal}</h1>
                     <h1>Descrição:{canal.descricao}</h1>
 
                     <iframe 
