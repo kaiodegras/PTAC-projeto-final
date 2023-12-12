@@ -1,24 +1,20 @@
-.container {
+h1{
     text-align: center;
-  }
-  
-  .video-container {
-    display: inline-block;
-    position: relative;
-    margin: 20px;
-  }
-  
-  iframe {
-    position: absolute;
-    top: 85%; /* Ajuste conforme necessário para posicionar mais para baixo */
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    color: white;
+}
 
-  body {
-    background: linear-gradient(to bottom, #000000, #808080);
-  }
+h4{
+  color:white;
+}
 
-  h1, h4{
-    color: white
-  }
+body {
+   
+        background: linear-gradient(to bottom, #000000, #808080);
+     }
+
+div{
+    align-items: center;
+}
+      
+  
+  
