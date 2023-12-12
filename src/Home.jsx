@@ -27,7 +27,10 @@ export default function ToDo() {
             Video:Video
         }]);
         setId(id + 1);
-        setAtividade("");
+        setCanal(""),
+        setDescricao("");
+        setVideo("");
+        setUrl("");
         
     };
 

@@ -1,19 +1,13 @@
-import React from "react";
-import './destaque.css';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function Destaque() {
-    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) || [];
+export default function Destaque(){
+    const listaLocalStorage = localStorage.getItem("Lista");
 
-    return (
-        <div className="container">
-        <div className="header">
-            <h2>JIU</h2>
+    return(
+        <div>
+            <h1>JIU FLIX</h1>
+            {listaLocalStorage.slice(-4).map(canal)}
         </div>
-               <div className="timeline">
-                {Video.slice(-4)}
-                </div> 
-    </div>
-
-     
     )
     }
