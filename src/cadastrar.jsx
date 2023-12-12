@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import "./home.css";
 
 export default function ToDo() {
+
     const listaLocalStorage = localStorage.getItem("Lista");
+    
     const [atividade, setAtividade] = useState("");
     const [lista, setLista] = useState(JSON.parse(listaLocalStorage)|| []);
     const [id, setId] = useState(1);
@@ -52,6 +54,8 @@ export default function ToDo() {
                 <div key={canal.id}>
                     <h1>Nome:{canal.nome}</h1>
                     <h1>Canal:{canal.Canal}</h1>
+
+
                     <h1>Descrição:{canal.descricao}</h1>
 
                     <iframe 
